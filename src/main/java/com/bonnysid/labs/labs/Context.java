@@ -1,20 +1,15 @@
 package com.bonnysid.labs.labs;
 
-import com.bonnysid.labs.labs.model.TrafficLight;
+import com.bonnysid.labs.labs.model.Student;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
 public class Context {
     public static void main(String[] args) {
-        ApplicationContext context= new AnnotationConfigApplicationContext(Config.class);
+        ApplicationContext context= new AnnotationConfigApplicationContext("com.bonnysid.labs.labs");
 
-        TrafficLight trafficLight = context.getBean("trafficLight", TrafficLight.class);
-        trafficLight.next();
-        trafficLight.next();
-        trafficLight.next();
-        trafficLight.next();
-        trafficLight.next();
-        trafficLight.next();
+        System.out.println(context.getBean("student", Student.class));
+
     }
 }
